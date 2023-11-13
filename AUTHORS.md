@@ -19,6 +19,7 @@
 - Adam Bujdoš - <https://github.com/bujdy>
 - Aman Negi - <https://github.com/AmanNegi>
 - Sandi Milohanic - <https://github.com/sandimilohanic>
+- Mohammad Rafigh - <https://github.com/mohammadrafigh>
 - Miroslav Mazel - <https://gitlab.com/12people>
 - artchiee - <https://github.com/artchiee>
 - Tejas Bir Singh - <https://github.com/tejasbirsingh>
@@ -57,7 +58,7 @@
 - Norwegian Bokmål
 
   - Allan Nordhøy <epost@anotheragency.no> (98)
-  
+
 - Japanese
 
   - Kosei TANAKA <wms784.app@gmail.com> (97)
@@ -67,5 +68,5 @@
   - Nenza Nurfirmansyah <nnurfirmansyah@gmail.com> (73)
 
 - Croatian
-  
+
   - Sandi Milohaic <sandi.milohanic@gmail.com>

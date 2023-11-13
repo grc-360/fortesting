@@ -41,6 +41,7 @@ import 'package:wger/providers/workout_plans.dart';
 import 'package:wger/theme/theme.dart';
 import 'package:wger/widgets/core/core.dart';
 import 'package:wger/widgets/exercises/images.dart';
+import 'package:wger/widgets/exercises/videos.dart';
 import 'package:wger/widgets/workouts/forms.dart';
 
 class GymMode extends StatefulWidget {
@@ -702,6 +703,17 @@ class ExerciseOverview extends StatelessWidget {
                         textAlign: TextAlign.center,
                       ))
                   .toList(),
+              if (_exerciseBase.videos.isNotEmpty)
+                SizedBox(
+                  width: double.infinity,
+                  height: 200,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      ..._exerciseBase.videos.map((e) => ExerciseVideoWidget(video: e)).toList(),
+                    ],
+                  ),
+                ),
               if (_exerciseBase.images.isNotEmpty)
                 SizedBox(
                   width: double.infinity,
@@ -1073,6 +1085,8 @@ class NavigationHeader extends StatelessWidget {
   });
 
   Widget getDialog(BuildContext context) {
+    final exerciseProvider = Provider.of<ExercisesProvider>(context, listen: false);
+
     return AlertDialog(
       title: Text(
         AppLocalizations.of(context).jumpTo,
@@ -1084,7 +1098,11 @@ class NavigationHeader extends StatelessWidget {
           children: [
             ...exercisePages.keys.map((e) {
               return ListTile(
-                title: Text(e),
+                title: Text(
+                  exerciseProvider.findExerciseBaseByUuid(e).getExercise(
+                    Localizations.localeOf(context).languageCode
+                  ).name
+                ),
                 trailing: const Icon(Icons.chevron_right),
                 onTap: () {
                   _controller.animateToPage(
